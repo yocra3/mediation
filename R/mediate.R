@@ -1432,6 +1432,11 @@ mediate <- function(model.m, model.y, sims = 1000,
       tau <- (zeta.1 + delta.0 + zeta.0 + delta.1)/2
       nu.0 <- delta.0/tau
       nu.1 <- delta.1/tau
+      
+      nu.0[is.na(nu.0)] <- 0
+      nu.1[is.na(nu.1)] <- 0
+     
+      
       delta.avg <- (delta.1 + delta.0)/2
       zeta.avg <- (zeta.1 + zeta.0)/2
       nu.avg <- (nu.1 + nu.0)/2
